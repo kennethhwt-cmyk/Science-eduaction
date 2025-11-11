@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Learning Links 🔬</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .back-button:hover {
+            color: #4c63d2;
+            transform: translateX(-5px);
+        }
+        
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #667eea;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .link-item {
+            background: linear-gradient(135deg, #667eea 0%, #4c63d2 100%);
+            padding: 18px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .link-item:hover::before {
+            left: 100%;
+        }
+        
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #4c63d2 0%, #667eea 100%);
+        }
+        
+        .link-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .link-icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+        
+        .link-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .arrow {
+            font-size: 20px;
+            opacity: 0.8;
+        }
+
+        .link-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .link-title {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .link-description {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-left: 40px;
+        }
+
+        .materi-link-item {
+            padding: 20px 25px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .page {
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Halaman Utama -->
+        <div id="mainPage" class="page">
+            <div class="profile">
+                <div class="profile-icon">🔬</div>
+                <h1>Science Learning Hub</h1>
+                <p class="subtitle">Eksplorasi Dunia Sains Bersama!</p>
+            </div>
+            
+            <div class="links">
+                <div class="link-item" onclick="showMateriPage()">
+                    <div class="link-content">
+                        <span class="link-icon">📚</span>
+                        <span class="link-text">Materi Pembelajaran Sains</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+                
+                <a href="https://share.google/GaqZ8kWMEOwQnwfIW" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">🧪</span>
+                        <span class="link-text">Eksperimen Sains Sederhana</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                
+                <a href="https://youtube.com/@sciencechannel?si=lu6a86Cyoae4FLlv" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">🎥</span>
+                        <span class="link-text">Channel YouTube</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                
+                <a href="https://share.google/u3TKbbzEfzzeBJfpy" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">🌍</span>
+                        <span class="link-text">Fakta Sains Menarik</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                
+                <div class="link-item" onclick="copyNumber()">
+                    <div class="link-content">
+                        <span class="link-icon">👨‍🔬</span>
+                        <span class="link-text">Hubungi Pengajar</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>✨ Mari belajar sains dengan cara yang menyenangkan! ✨</p>
+            </div>
+        </div>
+
+        <!-- Halaman Materi Pembelajaran -->
+        <div id="materiPage" class="page hidden">
+            <a class="back-button" onclick="showMainPage()">← Kembali ke Menu Utama</a>
+            
+            <div class="profile">
+                <div class="profile-icon" style="animation: bounce 2s ease-in-out infinite;">📚</div>
+                <h1>Materi Pembelajaran Sains</h1>
+                <p class="subtitle">Pilih Buku Sesuai Kelasmu</p>
+            </div>
+            
+            <div class="links">
+                <a href="https://share.google/7jtzXdfYBM70xcGjC" target="_blank" class="link-item materi-link-item">
+                    <div class="link-header">
+                        <div class="link-title">
+                            <span class="link-icon">📘</span>
+                            <span>Buku Kelas 10</span>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="link-description">Fisika, Kimia, Biologi - Semester 1 & 2</div>
+                </a>
+                
+                <div class="link-item materi-link-item" onclick="showKelas11Page()">
+                    <div class="link-header">
+                        <div class="link-title">
+                            <span class="link-icon">📗</span>
+                            <span>Buku Kelas 11</span>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="link-description">Fisika, Kimia, Biologi - Semester 1 & 2</div>
+                </div>
+                
+                <div class="link-item materi-link-item" onclick="showKelas12Page()">
+                    <div class="link-header">
+                        <div class="link-title">
+                            <span class="link-icon">📙</span>
+                            <span>Buku Kelas 12</span>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="link-description">Fisika, Kimia, Biologi - Semester 1 & 2</div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>🔬 Selamat belajar dan eksplorasi sains! 🔬</p>
+            </div>
+        </div>
+
+        <!-- Halaman Kelas 11 -->
+        <div id="kelas11Page" class="page hidden">
+            <a class="back-button" onclick="showMateriPage()">← Kembali ke Pilihan Kelas</a>
+            
+            <div class="profile">
+                <div class="profile-icon" style="animation: bounce 2s ease-in-out infinite;">📗</div>
+                <h1>Buku Kelas 11</h1>
+                <p class="subtitle">Pilih Mata Pelajaran</p>
+            </div>
+            
+            <div class="links">
+                <a href="https://share.google/pmuTgLUN2yyrU5XKt" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">⚛️</span>
+                        <span class="link-text">Fisika Kelas 11</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                
+                <a href="https://share.google/tpsfnkD02kcR0c9hp" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">🧪</span>
+                        <span class="link-text">Kimia Kelas 11</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                
+                <a href="https://share.google/SHvSFJFo0kRLahDRi" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">🧬</span>
+                        <span class="link-text">Biologi Kelas 11</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="footer">
+                <p>📗 Materi lengkap untuk kelas 11</p>
+            </div>
+        </div>
+
+        <!-- Halaman Kelas 12 -->
+        <div id="kelas12Page" class="page hidden">
+            <a class="back-button" onclick="showMateriPage()">← Kembali ke Pilihan Kelas</a>
+            
+            <div class="profile">
+                <div class="profile-icon" style="animation: bounce 2s ease-in-out infinite;">📙</div>
+                <h1>Buku Kelas 12</h1>
+                <p class="subtitle">Pilih Mata Pelajaran</p>
+            </div>
+            
+            <div class="links">
+                <a href="https://share.google/4aZOp3oXHVsa2nyVB" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">⚛️</span>
+                        <span class="link-text">Fisika Kelas 12</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                
+                <a href="https://share.google/K7pks6zknWEvyylm3" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">🧪</span>
+                        <span class="link-text">Kimia Kelas 12</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                
+                <a href="https://share.google/ELsQ7oMmAOrMPjndN" target="_blank" class="link-item">
+                    <div class="link-content">
+                        <span class="link-icon">🧬</span>
+                        <span class="link-text">Biologi Kelas 12</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="footer">
+                <p>📙 Materi lengkap untuk kelas 12</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyNumber() {
+            const phoneNumber = '089617134455';
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(phoneNumber).then(() => {
+                    alert('✅ Nomor berhasil disalin!\n\n📱 ' + phoneNumber);
+                }).catch(() => {
+                    fallbackCopy(phoneNumber);
+                });
+            } else {
+                fallbackCopy(phoneNumber);
+            }
+        }
+        
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                alert('✅ Nomor berhasil disalin!\n\n📱 ' + text);
+            } catch (err) {
+                alert('📱 Nomor Pengajar: ' + text + '\n\nSilakan salin manual');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function showMateriPage() {
+            document.getElementById('mainPage').classList.add('hidden');
+            document.getElementById('materiPage').classList.remove('hidden');
+            document.getElementById('kelas11Page').classList.add('hidden');
+            document.getElementById('kelas12Page').classList.add('hidden');
+        }
+
+        function showMainPage() {
+            document.getElementById('materiPage').classList.add('hidden');
+            document.getElementById('kelas11Page').classList.add('hidden');
+            document.getElementById('kelas12Page').classList.add('hidden');
+            document.getElementById('mainPage').classList.remove('hidden');
+        }
+
+        function showKelas11Page() {
+            document.getElementById('materiPage').classList.add('hidden');
+            document.getElementById('mainPage').classList.add('hidden');
+            document.getElementById('kelas12Page').classList.add('hidden');
+            document.getElementById('kelas11Page').classList.remove('hidden');
+        }
+
+        function showKelas12Page() {
+            document.getElementById('materiPage').classList.add('hidden');
+            document.getElementById('mainPage').classList.add('hidden');
+            document.getElementById('kelas11Page').classList.add('hidden');
+            document.getElementById('kelas12Page').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
