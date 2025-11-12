@@ -13,12 +13,161 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, 
+                #0a1128 0%, 
+                #001f54 15%, 
+                #034078 30%, 
+                #1282a2 45%, 
+                #0090c1 60%, 
+                #00a8cc 75%,
+                #00b4d8 90%,
+                #48cae4 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Floating Science Emojis */
+        .floating-emoji {
+            position: fixed;
+            font-size: 50px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            user-select: none;
+        }
+        
+        .emoji-1 {
+            top: 10%;
+            left: 15%;
+            animation: float1 8s ease-in-out infinite;
+        }
+        
+        .emoji-2 {
+            top: 20%;
+            right: 10%;
+            animation: float2 10s ease-in-out infinite;
+        }
+        
+        .emoji-3 {
+            top: 60%;
+            left: 8%;
+            animation: float3 12s ease-in-out infinite;
+        }
+        
+        .emoji-4 {
+            bottom: 15%;
+            right: 20%;
+            animation: float4 9s ease-in-out infinite;
+        }
+        
+        .emoji-5 {
+            top: 35%;
+            left: 5%;
+            animation: float5 11s ease-in-out infinite;
+        }
+        
+        .emoji-6 {
+            top: 70%;
+            right: 15%;
+            animation: float6 13s ease-in-out infinite;
+        }
+        
+        .emoji-7 {
+            bottom: 25%;
+            left: 12%;
+            animation: float7 10s ease-in-out infinite;
+        }
+        
+        .emoji-8 {
+            top: 45%;
+            right: 8%;
+            animation: float8 14s ease-in-out infinite;
+        }
+        
+        .emoji-9 {
+            top: 15%;
+            left: 45%;
+            animation: float9 9s ease-in-out infinite;
+        }
+        
+        .emoji-10 {
+            bottom: 20%;
+            right: 35%;
+            animation: float10 11s ease-in-out infinite;
+        }
+        
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -30px) rotate(5deg); }
+            50% { transform: translate(-15px, -50px) rotate(-5deg); }
+            75% { transform: translate(10px, -25px) rotate(3deg); }
+        }
+        
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-25px, 30px) rotate(-8deg); }
+            50% { transform: translate(20px, 50px) rotate(8deg); }
+            75% { transform: translate(-10px, 20px) rotate(-4deg); }
+        }
+        
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -20px) rotate(6deg); }
+            66% { transform: translate(-20px, -40px) rotate(-6deg); }
+        }
+        
+        @keyframes float4 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-30px, -25px) rotate(-7deg); }
+            66% { transform: translate(25px, -45px) rotate(7deg); }
+        }
+        
+        @keyframes float5 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(15px, 35px) rotate(10deg); }
+        }
+        
+        @keyframes float6 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -30px) rotate(-10deg); }
+        }
+        
+        @keyframes float7 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(25px, 20px) rotate(5deg); }
+            50% { transform: translate(-15px, 40px) rotate(-5deg); }
+            75% { transform: translate(10px, 15px) rotate(3deg); }
+        }
+        
+        @keyframes float8 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-20px, -35px) rotate(-9deg); }
+            50% { transform: translate(15px, -55px) rotate(9deg); }
+            75% { transform: translate(-10px, -20px) rotate(-4deg); }
+        }
+        
+        @keyframes float9 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-15px, 30px) rotate(7deg); }
+            66% { transform: translate(20px, -25px) rotate(-7deg); }
+        }
+        
+        @keyframes float10 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(25px, -40px) rotate(12deg); }
         }
         
         .container {
@@ -28,6 +177,8 @@
             border-radius: 20px;
             padding: 40px 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .back-button {
@@ -189,8 +340,18 @@
     </style>
 </head>
 <body>
+    <div class="floating-emoji emoji-1">🔬</div>
+    <div class="floating-emoji emoji-2">⚗️</div>
+    <div class="floating-emoji emoji-3">🧪</div>
+    <div class="floating-emoji emoji-4">🧬</div>
+    <div class="floating-emoji emoji-5">⚛️</div>
+    <div class="floating-emoji emoji-6">🌡️</div>
+    <div class="floating-emoji emoji-7">🔭</div>
+    <div class="floating-emoji emoji-8">💉</div>
+    <div class="floating-emoji emoji-9">🧲</div>
+    <div class="floating-emoji emoji-10">🌌</div>
+    
     <div class="container">
-        <!-- Halaman Utama -->
         <div id="mainPage" class="page">
             <div class="profile">
                 <div class="profile-icon">🔬</div>
@@ -245,7 +406,6 @@
             </div>
         </div>
 
-        <!-- Halaman Materi Pembelajaran -->
         <div id="materiPage" class="page hidden">
             <a class="back-button" onclick="showMainPage()">← Kembali ke Menu Utama</a>
             
@@ -295,7 +455,6 @@
             </div>
         </div>
 
-        <!-- Halaman Kelas 11 -->
         <div id="kelas11Page" class="page hidden">
             <a class="back-button" onclick="showMateriPage()">← Kembali ke Pilihan Kelas</a>
             
@@ -336,7 +495,6 @@
             </div>
         </div>
 
-        <!-- Halaman Kelas 12 -->
         <div id="kelas12Page" class="page hidden">
             <a class="back-button" onclick="showMateriPage()">← Kembali ke Pilihan Kelas</a>
             
@@ -441,4 +599,4 @@
         }
     </script>
 </body>
-</html>
+                </html>
